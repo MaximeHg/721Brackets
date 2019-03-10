@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import BracketNavbar from './Components/Navbar/Navbar';
+import EastRegion from './Components/Builder/EastRegion';
+import WestRegion from './Components/Builder/WestRegion';
+import SouthRegion from './Components/Builder/SouthRegion';
+import MidwestRegion from './Components/Builder/MidwestRegion';
+import Home from './Components/Home/Home';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>
+        <div>
+          <BracketNavbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/east" component={EastRegion}/>
+            <Route exact path="/south" component={SouthRegion}/>
+            <Route exact path="/west" component={WestRegion}/>
+            <Route exact path="/midwest" component={MidwestRegion}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
