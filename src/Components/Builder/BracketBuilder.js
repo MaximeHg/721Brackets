@@ -42,7 +42,7 @@ export default class BracketBuilder extends Component {
       results: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
                 -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
                 -1,-1,-1],
-      finished: false
+      finished: false // to change when prod
     }
 
     this.updateResultArray = this.updateResultArray.bind(this)
@@ -70,7 +70,7 @@ export default class BracketBuilder extends Component {
         <FinalFour teams={[this.state.eastTeams[this.state.results[14]], this.state.southTeams[this.state.results[29]-15],
                            this.state.westTeams[this.state.results[44]-30], this.state.midwestTeams[this.state.results[59]-45]]}
                           start={60} end={62} updateResult={this.updateResultArray}/>
-        <BracketBuy buyable={this.state.finished}/>
+        <BracketBuy buyable={this.state.finished} predictions={this.state.results}/>
       </div>
     );
   }
