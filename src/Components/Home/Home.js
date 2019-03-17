@@ -28,6 +28,7 @@ export default class Home extends Component {
           <p>For those who aren't familiar with the NCAA Tournament and the March Madness hype around it, check <a rel="noopener noreferrer" target="_blank" href="https://www.ncaa.com/news/basketball-men/2019-03-17/what-march-madness-ncaa-tournament-explained">this article</a>.</p>
           <p>You can ask me anything about this app on <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/MaximeHg">Twitter</a> or check out the code on <a rel="noopener noreferrer" target="_blank" href="https://github.com/MaximeHg/721Brackets-contracts">Github</a>.</p>
           <small><p>Please use Metamask connected to Ropsten.</p>
+          <p>Bracket is complete but exact dates&times are not yet available.</p>
           <p>I will try to deploy the finalized contracts to the xDai chain before tournament starts!</p></small>
         </div>
       </div>

@@ -10,8 +10,6 @@ export default class BracketNavbar extends Component {
         <Navbar bg="primary" variant="dark" expand="lg">
           <Navbar.Brand href="/721Brackets">721Brackets</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/721Brackets/build">Bracket Builder</Nav.Link>
-            <Nav.Link href="/721Brackets/view/5">View brackets</Nav.Link>
           </Nav>
         </Navbar>
     );
