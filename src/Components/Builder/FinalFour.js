@@ -70,7 +70,7 @@ export default class FinalFour extends Component {
               </Col>
               <Col className="text-center align-middle" md= {{span:'2.5', offset: 2}}>
                 <p>Your NCAA Tournament 2019 winner: <br/><b>{this.props.allTeams[this.state.finalFourResults[2]]}</b></p>
-                {this.props.goBack && <Button variant="warning" onClick={this.props.goBack}>Previous region</Button>}
+                {this.props.goBack && <Button variant="info" onClick={this.props.goBack}>Previous region</Button>}
               </Col>
             </Row>
             <Row>

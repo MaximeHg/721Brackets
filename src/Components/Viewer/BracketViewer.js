@@ -4,6 +4,7 @@ import Web3 from 'web3';
 import RegionBracket from "../Builder/RegionBracket";
 import FinalFour from "../Builder/FinalFour";
 import CoreAbi from '../../CoreAbi';
+import Footer from '../Footer/Footer';
 
 export default class BracketViewer extends Component {
 
@@ -72,7 +73,7 @@ export default class BracketViewer extends Component {
   }
 
   async fillBracket() {
-    let bracket = await this.state.core.methods.getPredictions(5).call()
+    let bracket = await this.state.core.methods.getPredictions(this.props.match.params.id).call()
     this.setState({bracket:bracket})
     const newBracket = this.state.bracket.map(x => parseInt(x));
     this.setState({results:newBracket})
@@ -91,6 +92,11 @@ export default class BracketViewer extends Component {
   render() {
     return(
       <div>
+      <br/>
+      <div className="text-center">
+        <h1>Bracket for token ID #{this.props.match.params.id}</h1>
+        <small>To view a specific token, use the URL parameter: 721Brackets/view/tokenID</small>
+      </div>
       {this.state.region===0 && <RegionBracket dates={this.state.eastDates} goNext={this.goNext} view={true} results={this.state.results.slice(0, 15)} teams={this.state.eastTeams} region="East" startRes={0} endRes={14} startTeam={0} endTeam={15} updateResult={this.updateResultArray}/>}
       {this.state.region===1 && <RegionBracket dates={this.state.southDates} goBack={this.goBack} goNext={this.goNext} view={true} results={this.state.results.slice(15, 30)} teams={this.state.southTeams} region="South" startRes={15} endRes={29} startTeam={16} endTeam={31} updateResult={this.updateResultArray}/>}
       {this.state.region===2 && <RegionBracket dates={this.state.westDates} goBack={this.goBack} goNext={this.goNext} view={true} results={this.state.results.slice(30, 45)} teams={this.state.westTeams} region="West" startRes={30} endRes={44} startTeam={32} endTeam={47} updateResult={this.updateResultArray}/>}
@@ -99,6 +105,7 @@ export default class BracketViewer extends Component {
                    view={true} results={this.state.results.slice(60, 63)} teams={[this.state.results[14], this.state.results[29],
                            this.state.results[44], this.state.results[59]]} goBack={this.goBack}
                           start={60} end={62} updateResult={this.updateResultArray}/>}
+      <Footer />
       </div>
     );
   }

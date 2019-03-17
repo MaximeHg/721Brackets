@@ -44,7 +44,8 @@ export default class BracketBuy extends Component {
           Once you've finished your bracket, transform it into a unique token and enter our pool!
         </p>
         <button disabled={!this.props.buyable} onClick={this.buyBracket}>Buy bracket</button>
-        <p>{this.state.txFeedback}</p>
+        <br/>
+        <p><a rel='noopener noreferrer' target='_blank' href={'https://ropsten.etherscan.io/tx/'+this.state.txHash}>{this.state.txFeedback}</a></p>
       </div>
     );
   }

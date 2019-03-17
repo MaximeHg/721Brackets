@@ -96,10 +96,10 @@ export default class RegionBracket extends Component {
               <Col md= {{span:'2.5', offset: 6}}>
                 <BracketResultEntry date={this.props.dates[14]} view={this.props.view} game={15} game1={13} game2={14} result={this.updateGameResult} results={this.state.regionResults} teams={this.props.teams}/>
               </Col>
-              <Col className="text-center" md= {{span:2, offset: 1}}>
+              <Col className="text-center" md= {{span:3, offset: 1}}>
                 <p >Your {this.props.region} region winner: <br/> <b>{this.props.teams[this.state.regionResults[14]]}</b></p>
-                  {this.props.goBack && <Button variant="warning" size="md" onClick={this.props.goBack}>Previous region</Button>}
-                  {this.props.goNext && <Button variant="success" size="md" onClick={this.props.goNext}>Next region</Button>}
+                  {this.props.goBack && <Button variant="info" size="md" onClick={this.props.goBack}>Previous region</Button>}
+                  <span> </span>{this.props.goNext && <Button variant="success" size="md" onClick={this.props.goNext}>Next region</Button>}
               </Col>
             </Row>
             <Row>

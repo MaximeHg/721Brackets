@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import RegionBracket from "./RegionBracket";
 import FinalFour from "./FinalFour";
 import BracketBuy from "../BracketBuy/BracketBuy";
+import Footer from '../Footer/Footer';
 
 function isResultSet(element) {
   return element === -1;
@@ -101,6 +102,7 @@ export default class BracketBuilder extends Component {
                             start={60} end={62} updateResult={this.updateResultArray}/>
             <BracketBuy buyable={this.state.finished} predictions={this.state.results}/>
           </div>}
+          <Footer />
       </div>
     );
   }

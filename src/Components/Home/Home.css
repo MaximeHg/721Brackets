@@ -3,3 +3,15 @@
   margin: 0 auto;
   margin-top: 3%;
 }
+
+.footer {
+  line-height: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.prez {
+  width:50%;
+  margin: 0 auto;
+}

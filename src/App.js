@@ -13,9 +13,11 @@ class App extends Component {
         <div>
           <BracketNavbar />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/721Brackets" component={Home} />
+            <Route exact path="/721Brackets/build" component={BracketBuilder} />
+            <Route exact path="/721Brackets/view/:id" component={BracketViewer} />
             <Route exact path="/build" component={BracketBuilder} />
-            <Route exact path="/view" component={BracketViewer} />
+            <Route exact path="/view/:id" component={BracketViewer} />
           </Switch>
         </div>
       </BrowserRouter>
