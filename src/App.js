@@ -16,8 +16,9 @@ class App extends Component {
             <Route exact path="/721Brackets" component={Home} />
             <Route exact path="/721Brackets/build" component={BracketBuilder} />
             <Route exact path="/721Brackets/view/:id" component={BracketViewer} />
-            <Route exact path="/build" component={BracketBuilder} />
-            <Route exact path="/view/:id" component={BracketViewer} />
+            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+            <Route exact path={process.env.PUBLIC_URL + '/build'} component={BracketBuilder} />
+            <Route exact path={process.env.PUBLIC_URL + '/view/:id'} component={BracketViewer} />
           </Switch>
         </div>
       </BrowserRouter>
