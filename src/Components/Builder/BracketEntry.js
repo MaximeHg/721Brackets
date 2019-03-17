@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 
 import ListGroup from "react-bootstrap/ListGroup";
+import './Bracket.css';
 
 export default class BracketEntry extends Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      item1Classes:"",
+      item2Classes:""
+    }
 
     this.chooseTeam1 = this.chooseTeam1.bind(this);
     this.chooseTeam2 = this.chooseTeam2.bind(this);
@@ -30,21 +36,44 @@ export default class BracketEntry extends Component {
   }
 
   chooseTeam1() {
-    if (!this.props.finalFour) this.resetResults()
-    this.props.result(this.props.game-1, this.props.team1-1)
+    if(!this.props.view) {
+      if (!this.props.finalFour) this.resetResults()
+      this.props.result(this.props.game-1, this.props.team1-1)
+      let item1Classes = "font-weight-bold"
+      let item2Classes = ""
+      this.setState({item1Classes})
+      this.setState({item2Classes})
+    }
   }
 
   chooseTeam2() {
-    if (!this.props.finalFour) this.resetResults()
-    this.props.result(this.props.game-1, this.props.team2-1)
+    if(!this.props.view) {
+      if (!this.props.finalFour) this.resetResults()
+      this.props.result(this.props.game-1, this.props.team2-1)
+      let item2Classes = "font-weight-bold"
+      let item1Classes = ""
+      this.setState({item2Classes})
+      this.setState({item1Classes})
+    }
   }
 
   render() {
     return(
-        <ListGroup variant="flush">
-          <ListGroup.Item onClick={this.chooseTeam1}>{this.props.teams[this.props.team1-1]}</ListGroup.Item>
-          <ListGroup.Item onClick={this.chooseTeam2}>{this.props.teams[this.props.team2-1]}</ListGroup.Item>
-        </ListGroup>
+      <div>
+        <div>
+          <ListGroup variant="flush">
+            <ListGroup.Item className={this.state.item1Classes+" entry"} onClick={this.chooseTeam1}>
+              {this.props.teams[this.props.team1-1]}
+            </ListGroup.Item>
+            <ListGroup.Item className={this.state.item2Classes+" entry"} onClick={this.chooseTeam2}>
+              {this.props.teams[this.props.team2-1]}
+            </ListGroup.Item>
+          </ListGroup>
+        </div>
+        <div>
+          <p className="text-center small">{this.props.date}</p>
+        </div>
+      </div>
     );
   }
 }

@@ -41,7 +41,7 @@ export default class BracketBuy extends Component {
     return(
       <div className="text-center">
         <p>
-          Now that you've finished your bracket, transform it into a unique token and enter our pool!
+          Once you've finished your bracket, transform it into a unique token and enter our pool!
         </p>
         <button disabled={!this.props.buyable} onClick={this.buyBracket}>Buy bracket</button>
         <p>{this.state.txFeedback}</p>
