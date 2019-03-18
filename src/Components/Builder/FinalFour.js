@@ -15,7 +15,7 @@ export default class FinalFour extends Component {
     this.state = {
       finalFourResults: [-1,-1,-1],
       teams:[-1,-1,-1,-1],
-      dates: ["3/23 6:00 PM EST", "3/23 7:00 PM EST", "3/23 8:00 PM EST"]
+      dates: ["4/6 TBD EDT", "4/6 TBD EDT", "4/8 TBD EDT"]
     }
 
   }

@@ -55,7 +55,7 @@ export default class FinalFourEntry extends Component {
           </ListGroup>
         </div>
         <div>
-          <p className="text-center small">{this.props.date}</p>
+          <p className="small">{this.props.date}</p>
         </div>
       </div>
     );
